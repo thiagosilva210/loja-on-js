@@ -1,0 +1,87 @@
+{
+    "items": [
+      {
+        "sys": { "id": "1" },
+        "fields": {
+          "title": "queen panel bed",
+          "price": 509.99,
+          "description": "The best queen panel bed in the world! ",
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
+        }
+      },
+      
+      {
+        "sys": { "id": "2" },
+        "fields": {
+          "title": "king panel bed",
+          "price": 609.99,
+          "description": "The best king panel bed in the world! ",
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "3" },
+        "fields": {
+          "title": "single panel bed",          
+          "price": 409.99,
+          "description": "The best single panel bed in the world!",
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "4" },
+        "fields": {
+          "title": "twin panel bed",
+          "description": "The best twin panel bed in the world!",
+          "price": 309.99,
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "5" },
+        "fields": {
+          "title": "fridge",
+          "description": "The best fridge in the world! ",
+          "price": 509.99,     
+          "status": "in stock",    
+          "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "6" },
+        "fields": {
+          "title": "dresser",
+          "description": "The best dresser in the world! ",
+          "price": 109.99,
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "7" },
+        "fields": {
+          "title": "couch",
+          "description": "The best couch in the world! ",
+          "price": 289.99,
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
+        }
+      },
+      {
+        "sys": { "id": "8" },
+        "fields": {
+          "title": "table",
+          "description": "The best table in the world! ",
+          "price": 209.99,
+          "status": "in stock",
+          "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
+        }
+      }
+     
+      
+    ]
+  }

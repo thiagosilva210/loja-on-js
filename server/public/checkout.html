@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/ebe07336e8.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/checkout.css" />
+</head>
+
+
+
+
+<body>
+
+  <!--------------------------------- navbar ----------------------------------->
+  <nav class="navbar">
+    <div class="navbar-center">
+      <div class="leWindow-btn">
+
+        <i class="fas fa-bars" id="leWindow-btn-1"></i>
+
+
+
+        <a href="index.html" class="nav-icon-1">
+
+          <h1>JS Loja</h1>
+        </a>
+
+      </div>
+
+
+      <form class="formHeader" action="search.html">
+        <input type="text" name="varname" class="searchInput" value="" />
+
+
+
+        <button class="button-search" type="submit">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+
+        </button>
+
+      </form>
+
+      <!--</div>-->
+
+
+      <div class="msgLoginDiv">
+
+
+
+
+        <p class='msgLogin'></p>
+        <p class="fazerLogout"></p>
+
+
+      </div>
+
+
+
+      <div class="cart-btn">
+        <span class="nav-icon">
+          <i class="fas fa-cart-plus"></i>
+        </span>
+
+
+        <div class="cart-items">0</div>
+      </div>
+  </nav>
+
+  <!--------------------------------- end navbar ----------------------------------->
+
+  <!-------------------------------------- cart ------------------------------------>
+
+  <div class="cart-overlay">
+    <div class="cart">
+      <span class="close-cart">
+        <i class="fas fa-window-close"></i>
+      </span>
+
+      <h2>your cart</h2>
+
+      <div class="cart-content"></div>
+
+      <div class="cart-footer">
+        <h3>your total: $<span class="cart-total">0</span></h3>
+
+        <button class="clear-cart banner-btn">clear cart</button>
+
+        <button class="shop-shop banner-btn">shop shop</button>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------------------------end of cart ------------------------------------>
+
+  <!----------------------------------área de checkout---------------------------------------------->
+
+  <div class="checkout-hero">
+    <div class="checkout-title">
+      <h1>Review items and delivery:</h1>
+    </div>
+
+    <div class="checkout-lista"></div>
+  </div>
+
+
+  <div class="confirm-address">
+
+
+
+    <p>Endereco de entrega: <span class="msg-endereco"></span></p>
+    <p>CEP onde os produtos serão entregues:<span class="msg-endereco-cep"></span></p>
+
+
+    <div class="valor-frete">
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <div class="cart-footer">
+    <h3>total items: <span class="total-itens">0</span></h3>
+
+    <h3>
+      valor total dos produtos: $<span class="cart-total-produtos">0</span>
+    </h3>
+
+    <h3>frete: $<span class="cart-total-frete">0</span></h3>
+
+    <h3>your total: $<span class="cart-total-final">0</span></h3>
+
+    <button class="completar banner-btn">Completar compra</button>
+  </div>
+
+
+
+
+  <!----------------------------------fim da área de checkout---------------------------------------------->
+
+  <!----------------------------- inicio da sidebar --------------------------------->
+
+
+  <div class="leWindow-overlay">
+
+    <div class="leWindow">
+
+      <span class="close-leWindow">
+        <i class="fas fa-window-close"></i>
+
+      </span>
+      <header>Categorias</header>
+
+
+
+      <ul>
+        <li><a href="search.html?varname=bed">Camas</a></li>
+        <li><a href="search.html?varname=couch">Sofás</a></li>
+        <li><a href="search.html?varname=fridge">Geladeira</a></li>
+        <li><a href="#">Entre em contato</a></li>
+        <li><a href="#">Sobre nós</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+  <!-------------------------------------- fim da sidebar -------------------------------->
+
+
+
+
+
+
+
+
+  <footer>
+
+    All rights reserved
+
+  </footer>
+
+
+  <div class="products-center">
+
+  </div>
+
+
+</body>
+
+<script src="app.js"></script>
+<script src="checkout.js"></script>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <!------------------------------Create Account------------------------------------>
+    <div class="container form--hidden" id="createAccount">
+      <div class="header">
+        <h2>Create Account</h2>
+      </div>
+      <form id="form-cadastro" class="form">
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" placeholder="nome completo" id="username" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username">CEP</label>
+          <input type="number" placeholder="ex.: 900.324-74" id="CEP" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username">Endereço</label>
+          <input
+            type="name"
+            placeholder="ex.: avenida asdrùbal"
+            id="endereco"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username">Email</label>
+          <input
+            type="email"
+            placeholder="ex.: asdrubal@asdrubalmail.com"
+            id="email"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username">Password</label>
+          <input type="password" placeholder="Password" id="password" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Password check</label>
+          <input
+            type="password"
+            placeholder="Confirm password"
+            id="password2"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <p class="form__text">
+          <a class="linklogin" id="linkLogin"
+            >Already have an account? Sign in</a
+          >
+        </p>
+        <button id="btn-submit">Criar Conta</button>
+      </form>
+    </div>
+    <!------------------------------End of Create Account------------------------------------>
+
+    <!------------------------------Login------------------------------------>
+    <div id="login" class="form login">
+      <div class="header">
+        <h2>Login</h2>
+      </div>
+      <form id="form-login" class="form">
+        <div class="form-control">
+          <label for="emailLogin">Email</label>
+          <input type="email" id="emailLogin" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Password</label>
+          <input type="password" id="passwordLogin" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <p class="form__text">
+          <a id="linkCreateAccount">Não tem uma conta? Criar uma conta</a>
+        </p>
+
+        <button id="loginBtn-submit">Fazer Login</button>
+      </form>
+    </div>
+    <!------------------------------Fim de Login------------------------------------>
+    <script src="login.js"></script>
+  </body>
+</html>
