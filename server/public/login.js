@@ -1,35 +1,15 @@
 const form = document.getElementById("form-cadastro");
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const password2 = document.getElementById("password2");
-
-const CEP = document.getElementById("CEP");
-const endereco = document.getElementById("endereco");
-
 const loginBtn = document.getElementById("loginBtn-submit");
-
-let validName;
-let validEmail;
-let validPassword;
-let validConfirmPassword;
-let validCEP;
-let validEndereco;
-
+const fields = document.querySelectorAll("#form-cadastro [name]");
 //create account logic
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  checkInputs();
-
-  if (
-    validName &&
-    validEmail &&
-    validPassword &&
-    validConfirmPassword &&
-    validEndereco &&
-    validCEP
-  ) {
+  let values = getValues();
+  if (!values) {
+    alert("Preencha todos os campos adequadamente");
+    return false;
+  } else {
     let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
     listaUser.push({
@@ -44,72 +24,53 @@ form.addEventListener("submit", (e) => {
     localStorage.setItem("listaUser", JSON.stringify(listaUser));
 
     alert("usuario registrado com sucesso");
-  } else {
-    alert("Preencha todos os campos adequadamente");
   }
 });
 
-//Check the validity of the values sended
-function checkInputs() {
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-  const password2Value = password2.value.trim();
-  const CEPValue = CEP.value.trim();
-  const enderecoValue = endereco.value.trim();
+//Conferir se os valores preenchem os requisitos
+function getValues() {
+  let user = {};
+  let isValid = true;
+  //const fields = document.querySelectorAll("#form-cadastro [name]");
+  const password1 = document.getElementById("password").value;
+  const password2 = document.getElementById("password2").value;
 
-  if (usernameValue === "") {
-    setErrorFor(username, "Username cannot be blank");
-    validName = false;
-  } else {
-    setSuccessFor(username);
-    validName = true;
-  }
+  fields.forEach(function (field, index) {
+    if (
+      ["username", "CEP", "endereco", "email", "password"].indexOf(field.name) >
+        -1 &&
+      !field.value
+    ) {
+      setErrorFor(field, "This space cannot be blank");
+      isValid = false;
+    }
 
-  if (CEPValue === "") {
-    setErrorFor(CEP, "cep cannot be blank");
-    validCEP = false;
-  } else {
-    setSuccessFor(CEP);
-    validCEP = true;
-  }
+    if (field.name === "email") {
+      if (!isEmail(field.value)) {
+        setErrorFor(field, "Not a valid email");
+        isValid = false;
+      }
+    }
 
-  if (enderecoValue === "") {
-    setErrorFor(endereco, "cep cannot be blank");
-    validEndereco = false;
-  } else {
-    setSuccessFor(endereco);
-    validEndereco = true;
-  }
+    if (field.name === "password") {
+      if (password1 !== password2) {
+        setErrorFor(field, "Password does not match");
+        isValid = false;
+      } else {
+        setSuccessFor(field);
+      }
+    }
+    user[field.name] = field.value;
 
-  if (emailValue === "") {
-    setErrorFor(email, "Email cannot be blank");
-    validEmail = false;
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Not a valid email");
-    validEmail = false;
-  } else {
-    setSuccessFor(email);
-    validEmail = true;
-  }
+    if (isValid) {
+      setSuccessFor(field);
+    }
+  });
 
-  if (passwordValue === "") {
-    setErrorFor(password, "Password cannot be blank");
-    validPassword = false;
+  if (!isValid) {
+    return false;
   } else {
-    setSuccessFor(password);
-    validPassword = true;
-  }
-
-  if (password2Value === "") {
-    setErrorFor(password2, "Password cannot be blank");
-    validPassword = false;
-  } else if (passwordValue !== password2Value) {
-    setErrorFor(password2, "Password does not match");
-    validPassword = false;
-  } else {
-    setSuccessFor(password2);
-    validConfirmPassword = true;
+    return true;
   }
 }
 
@@ -122,6 +83,7 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
+
   formControl.className = "form-control success";
 }
 

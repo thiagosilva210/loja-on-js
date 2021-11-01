@@ -3,7 +3,7 @@
 }
 
 body {
-  background: url("./images/hero-bcg.jpeg") center/cover no-repeat;
+  background: url("../images/hero-bcg.jpeg") center/cover no-repeat;
   font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
